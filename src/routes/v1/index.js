@@ -6,4 +6,5 @@ router.post('/city',Citycontroller.create);
 router.delete('/city/:id',Citycontroller.deletecity);
 router.get('/city/:id',Citycontroller.get);
 router.patch('/city/:id',Citycontroller.update);
+router.get('/city',Citycontroller.getallcity);
 module.exports = router;

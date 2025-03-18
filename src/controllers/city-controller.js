@@ -90,6 +90,26 @@ const getallcity = async(req,res)=>{
         })
     }
 }
+
+
+const createall = async(req,res)=>{
+    try{
+        console.log(req.body);
+        const cities = await cityservice.createallcity(req.body);
+        return res.status(200).json({
+            data: cities,
+            message : 'All cities created',
+            sucsees:true
+        })
+    }
+    catch(err){
+        return res.status(400).json({
+            data : err,
+            message : 'ALl City is not created',
+            sucsees : false
+        })
+    }
+}
 module.exports = {
-    create,deletecity,update,get,getallcity
+    create,deletecity,update,get,getallcity,createall
 }

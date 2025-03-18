@@ -13,11 +13,7 @@ const setup = async()=>{
     app.use('/api',Apiroutes);
     app.listen(PORT,async()=>{
         console.log('Server is started');
-        const city = await City.findByPk(18);
-        const airport = await city.getAirports();
-        console.log(city,airport);
-
-
+        
     })
 }
 setup();

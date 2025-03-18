@@ -6,7 +6,6 @@ class Cityrepo {
   async createcity({ name }) {
     try {
       const city = await City.create({ name });
-      console.log(city);
       return city;
     }
     catch (err) {
@@ -63,6 +62,20 @@ class Cityrepo {
       const cities = await City.findAll();
       return cities;
 
+    }
+    catch (err) {
+      throw (err);
+    }
+  }
+
+
+  async createall(arr) {
+    try {
+      const cities = await City.bulkCreate(arr, {
+        validate: true
+      });
+      console.log("Insert" + cities);
+      return cities;
     }
     catch (err) {
       throw (err);
